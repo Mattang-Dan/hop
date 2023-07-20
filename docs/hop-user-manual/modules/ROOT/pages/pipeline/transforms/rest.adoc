@@ -96,8 +96,8 @@ Populate the list of fields by clicking the Get fields button.
 [options="header"]
 |===
 |Option|Description
-|Field|The field from incoming Hop stream that contains the header information
-|Name|The name of the outgoing Hop field from this transform
+|Field|The field with the Header Key. Field from incoming Hop stream.
+|Name|The field with the Header value. Name of the outgoing Hop field.
 |===
 
 === Parameters Tab
