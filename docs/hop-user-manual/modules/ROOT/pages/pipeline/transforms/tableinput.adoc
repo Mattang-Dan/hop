@@ -31,6 +31,8 @@ Basic SQL statements can be generated automatically by clicking Get SQL select s
 
 SQL queries can be parameterized through variables and can accept input from previous transform fields.
 
+Table input does not pass input data to the output, only fields inside the query are returned to the pipeline so all other variables and data will be lost. You can solve this by adding the variable as a field in the query or put a Get variables behind the table input.
+
 |
 == Supported Engines
 [%noheader,cols="2,1a",frame=none, role="table-supported-engines"]
