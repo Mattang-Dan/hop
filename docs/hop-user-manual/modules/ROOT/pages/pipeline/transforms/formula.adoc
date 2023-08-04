@@ -18,6 +18,8 @@ under the License.
 :language: en_US
 :description: The Formula transform allows you to apply Excel-like formulas and functions on fields in a pipeline.
 
+To use a value from a data row field, use square brackets like [field1]. To use a parameter or variable, use the normal syntax ${param1}. If you use a parameter in place of text like with CONCATENATE (see samples) you must put double quotes around it. Example: CONCATENATE([field1], "${Param1}").
+
 :openvar: {
 :closevar: }
 
