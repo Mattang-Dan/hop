@@ -24,18 +24,31 @@ under the License.
 
 The Set Variables action sets variables at various scopes.
 
+Set Variables allows you to set variables in a workflow or in the JAVA virtual machine etc. This transform accepts one (and only one) row of data to set the value of a variable. You can use Set Variables on a generated data row or a data row from a table input for example. If you want to set a variable from a pipeline that processes multiple lines of data, make sure you isolate a single row before setting a variable.
+
+Variables set with Set Variable are not available to use in the current pipeline because of threading. If set values are needed in the current pipeline use a data row and use Set Field Value instead.
+
+Setting the variable names to the same variable names from the previous pipeline, is sometimes required as Javascript can use the variable name more easily. For the Variable name use a field name, not the variable syntax like ${myVarible}.
+
+Note that variables cannot be passed upstream between pipelines. Parameters are best passed downstream because of parallel processing. A nested pipeline is technically the same pipeline, so variables are inherited in the initialization phase.
+Though you cannot pass parameters and variables upstream (in nested or sequential pipelines) you can pass data rows back up a pipeline via the following pattern. See project: samples/loops/pipeline-executor.hpl
+
+A variable can be set in one pipeline and be available in the next pipeline (named pipeline) that is in the loop of a pipeline executor.  If you are using a pipeline executor child, the parent pipeline does not restart and does not get any set variables. The new variable name to set in a child pipeline is shown below in the second column.
+
 == Options
 
 [options="header"]
 |===
 |Option|Description
-|Workflow action name|The name of the workflow action.
+|Workflow Action name|The name of the workflow action.
+|Variable scope| (see below)
 |Name of properties file|The name of the properties file.
-|Variable scope a|
+|Variable substitution|Whether or not to substitute variables.
+|Variable name|A list of variables to set to a certain value at a certain scope.
+|Value|
+|Variable scope type|
 * Valid in the Java Virtual machine
 * Valid in the current workflow
 * Valid in the parent workflow
 * Valid in the root workflow
-|Variable substitution|Whether or not to substitute variables.
-|Variables|A list of variables to set to a certain value at a certain scope.
 |===
