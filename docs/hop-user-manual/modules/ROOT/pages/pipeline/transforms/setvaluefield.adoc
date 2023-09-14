@@ -38,14 +38,16 @@ The Set Field Value transform replaces the value of a field with the value of an
 !===
 |===
 
+TIP: If you need to set and use values in the current pipeline, consider using a Set Field Value instead of a Set Variables transform.
+
 == Options
 
 [options="header"]
 |===
 |Option|Description
 |Transform name|Name of the transform this name has to be unique in a single pipeline.
-|Field name|Select the field with values to be replaced
-|Replace by value from field|Select the field whose value will replace the value of the field in the Field name column
+|Field name|Select the field you want to set (value will be replaced)
+|Replace by value from field|Select the field you want to copy from
 |===
 
 == Metadata Injection Support
