@@ -26,8 +26,17 @@ under the License.
 |===
 |
 == Description
-
 The Get Variables transform allows you to get the value of a variable and create field(s) from it or allows you to add values to existing input rows. You could consider it to be a "Set fields” transform. It can retrieve the value of a previous variable and/or retrieves previous rows or you can set static values to a variable or input rows. You only need to use this transform if you need the variable value in a field.
+|
+== Supported Engines
+[%noheader,cols="2,1a",frame=none, role="table-supported-engines"]
+!===
+!Hop Engine! image:check_mark.svg[Supported, 24]
+!Spark! image:question_mark.svg[Maybe Supported, 24]
+!Flink! image:question_mark.svg[Maybe Supported, 24]
+!Dataflow! image:question_mark.svg[Maybe Supported, 24]
+!===
+|===
 
 
 Note that workflow/environment variables are set only once. A pipeline needs to start to get any new variables. A running or sequential or nested (nested pipelines are technically the same pipeline) pipeline can't fetch new variable values. A pipeline is considered started when a pipeline starts for every row in a pipeline executor.
@@ -48,17 +57,6 @@ You must always specify the data type or you will have errors like the following
 See also the Set Variables transform.
 To convert the Variable into a data type other than String use Select Values - Meta Data tab.
 To get system values, including command line arguments, use the Get System Info transform.
-
-|
-== Supported Engines
-[%noheader,cols="2,1a",frame=none, role="table-supported-engines"]
-!===
-!Hop Engine! image:check_mark.svg[Supported, 24]
-!Spark! image:question_mark.svg[Maybe Supported, 24]
-!Flink! image:question_mark.svg[Maybe Supported, 24]
-!Dataflow! image:question_mark.svg[Maybe Supported, 24]
-!===
-|===
 
 == Options
 
