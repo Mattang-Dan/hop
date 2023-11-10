@@ -30,14 +30,11 @@ under the License.
 
 The Filter Rows transform allows you to filter rows based on conditions and comparisons. It affects workflow if connecting the True or False outcome/hop to another transform. There are 3 path available as outputs (True/False/Main output). The main output follows the True path only.
 
-
 Once this transform is connected to a previous transform (one or more and receiving input), you can click on the "<field>", "=" and "<value>" areas to construct a condition. Downstream transforms can be connected to the True or False hop.
-
 
 TIP: To enter an IN LIST operator, use a string value separated by semicolons.
 
 TIP: Lists also works on numeric values like integers. In this case, the list of values must be entered with a string data type, e.g.: 2;3;7;8.  
-
 
 |
 == Supported Engines
@@ -108,6 +105,9 @@ In some cases it will be better to use a where filter in a SQL query than use a 
 === Filtering special characters
 
 To filter special characters like explicit EOF (e.g. from old cobol files) Use a REGEX expression in the "filter row" transform with the syntax: "\x{openvar}1A{closevar}" where \x mean HEX representation and 1A into parenthesis is the EOF char to match in HEX.
+
+== Sample
+The Samples project contains a file demonstrating some of these concepts "filter-rows-basic.hpl".
 
 == Metadata injection support 
 
