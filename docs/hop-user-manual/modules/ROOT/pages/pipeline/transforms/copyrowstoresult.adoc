@@ -41,6 +41,8 @@ The Copy Rows To Result transform can be paired with the Get Rows from Result tr
 
 This transform can be used by the Get Rows from Result transform and some workflow actions that allow to process the internal result row set.
 
+Note that a data row must exist in the child and the parent pipelines so that field(s) can be copied.
+
 NOTE: this transform is mainly available for historical reasons. There are newer and better ways to create loops in Hop, check the xref:best-practices/index.adoc[Best Practices] for more information.
 
 == Options
