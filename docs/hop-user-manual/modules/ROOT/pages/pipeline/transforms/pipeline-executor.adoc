@@ -155,8 +155,9 @@ If you don't need a certain result simply leave a blank input field.
 
 In the "Result rows" tab you can specify the layout of the expected result rows of this pipeline and to which transform to send them after execution.
 
-Please note that this transform will verify that the data type of the result row fields are identical to what is specified.
-If there is a difference an error will be thrown.
+Please note that this transform will verify that the data type of the result row fields are identical to what is specified. If there is a difference an error will be thrown.
+
+Note that a data row must exist in the child and the parent pipelines so the field(s) can be copied.
 
 === Result Files Tab
 
